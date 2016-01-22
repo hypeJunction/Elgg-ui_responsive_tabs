@@ -1,0 +1,22 @@
+{
+	"name": "hypejunction/ui_responsive_tabs",
+	"version": "0.0.0",
+	"type": "elgg-plugin",
+	"description": "Responsive tabs for Elgg",
+	"homepage": "http://hypejunction.com",
+	"keywords": [
+		"elgg", "plugin", "ui", "tabs"
+	],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Ismayil Khayredinov",
+			"email": "info@hypejunction.com"
+		}
+	],
+	"require": {
+		"php": ">=5.5",
+		"composer/installers": "1.*"
+	}
+}
+

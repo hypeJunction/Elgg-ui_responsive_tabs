@@ -1,0 +1,19 @@
+.elgg-menu-filter, .elgg-tabs { margin-bottom: 5px; border-bottom: 1px solid #DCDCDC; display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: flex-end; }
+.elgg-menu-filter > li, .elgg-tabs > li { border: 1px solid #DCDCDC; border-bottom-width: 0; background: #EEEEEE; margin: 0 0 0 5px; border-radius: 3px 3px 0 0; }
+.elgg-menu-filter > li > a, .elgg-tabs > li > a { text-decoration: none; display: block; padding: 4px 15px 6px; text-align: center; color: #666; position: relative; }
+.elgg-menu-filter > li:hover, .elgg-tabs > li:hover { background: #DEDEDE; }
+.elgg-menu-filter > li:hover > a, .elgg-tabs > li:hover > a { background: #DEDEDE; color: #444; }
+.elgg-menu-filter > li.elgg-state-selected, .elgg-tabs > li.elgg-state-selected { background: #FFFFFF; }
+.elgg-menu-filter > li.elgg-state-selected > a, .elgg-tabs > li.elgg-state-selected > a { background: #FFFFFF; color: #666; top: 1px; }
+
+@media (max-width: 766px) { .elgg-menu-filter, .elgg-tabs { overflow: visible; border: 1px solid #DCDCDC; border-radius: 3px; }
+  .elgg-menu-filter > li, .elgg-tabs > li { flex: 1 1 100%; margin: 0; border: none; display: none; z-index: 10; order: 1; border-radius: 0; }
+  .elgg-menu-filter > li > a, .elgg-tabs > li > a { text-align: left; margin: 1px; }
+  .elgg-menu-filter > li.elgg-state-selected, .elgg-tabs > li.elgg-state-selected { order: 0; display: block; padding-right: 30px; }
+  .elgg-menu-filter > li.elgg-state-selected > a, .elgg-tabs > li.elgg-state-selected > a { top: 0; position: relative; }
+  .elgg-menu-filter > li.elgg-state-selected > a:after, .elgg-tabs > li.elgg-state-selected > a:after { width: 0; height: 0; border-style: solid; border-width: 5px 5px 0 5px; border-color: #666 transparent transparent transparent; content: ""; display: block; position: absolute; right: -30px; top: 0; margin: 12px; }
+  .elgg-menu-filter.elgg-state-active > li, .elgg-tabs.elgg-state-active > li { display: block; }
+  .elgg-menu-filter.elgg-state-active > li:last-of-type, .elgg-tabs.elgg-state-active > li:last-of-type { border-bottom: 0; }
+  .elgg-menu-filter.elgg-state-active > li.elgg-state-selected, .elgg-tabs.elgg-state-active > li.elgg-state-selected { padding-right: 0; }
+  .elgg-menu-filter.elgg-state-active > li.elgg-state-selected > a:after, .elgg-tabs.elgg-state-active > li.elgg-state-selected > a:after { border: none; }
+  .elgg-tabs-nav { height: 32px; overflow: visible; } }

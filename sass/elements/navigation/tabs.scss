@@ -1,0 +1,112 @@
+$border-color: #DCDCDC;
+
+$background-color: #EEEEEE;
+$hover-background-color: #DEDEDE;
+$selected-background-color: #FFFFFF;
+
+$text-color: #666;
+$hover-text-color: #444;
+$selected-text-color: #666;
+
+.elgg-menu-filter, .elgg-tabs {
+	margin-bottom: 5px;
+	border-bottom: 1px solid $border-color;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-end;
+	& > li {
+		border: 1px solid $border-color;
+		border-bottom-width: 0;
+		background: $background-color;
+		margin: 0 0 0 5px;
+		border-radius: 3px 3px 0 0;
+
+		& > a {
+			text-decoration: none;
+			display: block;
+			padding: 4px 15px 6px;
+			text-align: center;
+			color: $text-color;
+			position: relative;
+		}
+
+		&:hover {
+			background: $hover-background-color;
+			& > a {
+				background: $hover-background-color;
+				color: $hover-text-color;
+			}
+		}
+
+		&.elgg-state-selected {
+			background: $selected-background-color;
+			& > a {
+				background: $selected-background-color;
+				color: $selected-text-color;
+				top: 1px;
+			}
+		}
+	}
+}
+
+@media (max-width: 766px) {
+	.elgg-menu-filter, .elgg-tabs {
+		overflow: visible;
+		border: 1px solid $border-color;
+		border-radius: 3px;
+		& > li {
+			flex: 1 1 100%;
+			margin: 0;
+			border: none;
+			display: none;
+			z-index: 10;
+			order: 1;
+			border-radius: 0;
+			& > a {
+				text-align: left;
+				margin: 1px;
+			}
+			&.elgg-state-selected {
+				order: 0;
+				display: block;
+				padding-right: 30px;
+				& > a {
+					top: 0;
+					position: relative;
+					&:after {
+						width: 0;
+						height: 0;
+						border-style: solid;
+						border-width: 5px 5px 0 5px;
+						border-color: $selected-text-color transparent transparent transparent;
+						content: "";
+						display: block;
+						position: absolute;
+						right: -30px;
+						top: 0;
+						margin: 12px;
+					}
+				}
+			}
+		}
+		&.elgg-state-active {
+			& > li {
+				display: block;
+				&:last-of-type {
+					border-bottom: 0;
+				}
+				&.elgg-state-selected {
+					padding-right: 0;
+					& > a:after {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+	.elgg-tabs-nav {
+		height: 32px;
+		overflow: visible;
+	}
+}
