@@ -5,7 +5,10 @@
 	"description": "Responsive tabs for Elgg",
 	"homepage": "http://hypejunction.com",
 	"keywords": [
-		"elgg", "plugin", "ui", "tabs"
+		"elgg",
+		"plugin",
+		"ui",
+		"tabs"
 	],
 	"license": "GPL-2.0",
 	"authors": [
@@ -22,6 +25,11 @@
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true
+		}
+	},
+	"extra": {
+		"elgg-plugin": {
+			"id": "ui_responsive_tabs"
 		}
 	}
 }
