@@ -18,16 +18,25 @@ class ViewExtensionsTest extends IntegrationTestCase {
 
     public function down() {}
 
+    /**
+     * @return string
+     */
     public function getPluginID(): string {
         return 'ui_responsive_tabs';
     }
 
+    /**
+     * @return void
+     */
     public function testPluginIsActive(): void {
         $plugin = elgg_get_plugin_from_id('ui_responsive_tabs');
         $this->assertNotNull($plugin, 'ui_responsive_tabs plugin should be installed');
         $this->assertTrue($plugin->isActive(), 'ui_responsive_tabs plugin should be active');
     }
 
+    /**
+     * @return void
+     */
     public function testTabsCssViewExists(): void {
         $this->assertTrue(
             elgg_view_exists('elements/navigation/tabs.css'),
@@ -35,6 +44,9 @@ class ViewExtensionsTest extends IntegrationTestCase {
         );
     }
 
+    /**
+     * @return void
+     */
     public function testTabsJsViewExists(): void {
         $this->assertTrue(
             elgg_view_exists('elements/navigation/tabs.js'),
@@ -42,6 +54,9 @@ class ViewExtensionsTest extends IntegrationTestCase {
         );
     }
 
+    /**
+     * @return void
+     */
     public function testTabsCssRendersNonEmpty(): void {
         $output = elgg_view('elements/navigation/tabs.css');
         $this->assertIsString($output);
@@ -53,6 +68,9 @@ class ViewExtensionsTest extends IntegrationTestCase {
         );
     }
 
+    /**
+     * @return void
+     */
     public function testTabsJsRendersNonEmpty(): void {
         $output = elgg_view('elements/navigation/tabs.js');
         $this->assertIsString($output);
@@ -64,6 +82,9 @@ class ViewExtensionsTest extends IntegrationTestCase {
         );
     }
 
+    /**
+     * @return void
+     */
     public function testTabsCssExtendsComponentsCss(): void {
         // The plugin registers tabs.css as an extension of elements/components.css
         // via elgg-plugin.php. Rendering components.css should therefore contain
@@ -77,6 +98,9 @@ class ViewExtensionsTest extends IntegrationTestCase {
         );
     }
 
+    /**
+     * @return void
+     */
     public function testTabsJsExtendsElggJs(): void {
         // tabs.js is registered as a view extension of elgg.js.
         $elggJs = elgg_view('elgg.js');
@@ -88,6 +112,9 @@ class ViewExtensionsTest extends IntegrationTestCase {
         );
     }
 
+    /**
+     * @return void
+     */
     public function testCoreTabsMenuViewRendersWithPluginActive(): void {
         // Regression guard: the plugin should not break core menu rendering.
         $output = elgg_view_menu('filter', [
