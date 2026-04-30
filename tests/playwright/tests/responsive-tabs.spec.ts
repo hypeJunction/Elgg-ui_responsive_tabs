@@ -21,20 +21,25 @@ test.describe('ui_responsive_tabs assets are served', () => {
     const response = await page.goto('/');
     expect(response?.ok()).toBeTruthy();
 
-    // Extract the first stylesheet href and fetch it directly.
-    const cssHref = await page
-      .locator('link[rel="stylesheet"]')
-      .first()
-      .getAttribute('href');
-    expect(cssHref).toBeTruthy();
+    // Fetch all stylesheets and check that at least one contains the tabs rules.
+    // Elgg 5.x loads multiple stylesheets (Font Awesome first, then Elgg CSS);
+    // we must check all of them rather than assuming a fixed load order.
+    const hrefs = await page.locator('link[rel="stylesheet"]').evaluateAll(
+      (links) => links.map((l) => (l as HTMLLinkElement).href)
+    );
+    expect(hrefs.length).toBeGreaterThan(0);
 
-    const cssResponse = await page.request.get(cssHref!);
-    expect(cssResponse.ok()).toBeTruthy();
-    const css = await cssResponse.text();
-    // The plugin's stylesheet uses these selectors — if extension is wired
-    // up, they MUST appear in the aggregated core components CSS.
-    expect(css).toContain('.elgg-tabs');
-    expect(css).toContain('.elgg-menu-filter');
+    let foundTabs = false;
+    for (const href of hrefs) {
+      const res = await page.request.get(href);
+      if (!res.ok()) continue;
+      const css = await res.text();
+      if (css.includes('.elgg-tabs') && css.includes('.elgg-menu-filter')) {
+        foundTabs = true;
+        break;
+      }
+    }
+    expect(foundTabs, 'No stylesheet contained .elgg-tabs and .elgg-menu-filter').toBeTruthy();
   });
 
   test('elgg.js bundle contains responsive tabs click handler', async ({ page }) => {
@@ -62,7 +67,7 @@ test.describe('Responsive tabs click behaviour', () => {
     // The members page commonly renders a filter menu. Fall back to the
     // dashboard if /members is not routable.
     let ok = false;
-    for (const path of ['/members', '/members/newest', '/dashboard']) {
+    for (const path of ['/members', '/members/newest', '/dashboard', '/']) {
       const r = await page.goto(path);
       if (r && r.ok()) {
         ok = true;
