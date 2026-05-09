@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"type": "elgg-plugin",
 	"description": "Responsive tabs for Elgg",
-	"homepage": "http://hypejunction.com",
+	"homepage": "https://github.com/hypeJunction/Elgg-ui_responsive_tabs",
 	"keywords": [
 		"elgg",
 		"plugin",
@@ -14,7 +14,7 @@
 	"authors": [
 		{
 			"name": "Ismayil Khayredinov",
-			"email": "info@hypejunction.com"
+			"email": "ismayil.khayredinov@gmail.com"
 		}
 	],
 	"require": {
