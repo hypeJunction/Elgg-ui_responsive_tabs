@@ -1,4 +1,4 @@
-# ui_responsive_tabs — Architecture (Elgg 5.x)
+# ui_responsive_tabs — Architecture (Elgg 6.x)
 
 ## Summary
 
@@ -12,10 +12,10 @@ CSS and JS view extensions into Elgg's asset pipeline. No PHP logic.
 | `elements/components.css` | `elements/navigation/tabs.css` |
 | `elgg.js` | `elements/navigation/tabs.js` |
 
-## JS (AMD, Elgg 5.x)
+## JS (ESM, Elgg 6.x)
 
-`elements/navigation/tabs.js` uses a `require(['jquery'], ...)` AMD module
-(AMD is still supported in Elgg 5.x). On click of a selected tab/filter item,
+`elements/navigation/tabs.js` uses an ES module (`import $ from 'jquery'`).
+RequireJS/AMD was removed in Elgg 6.x. On click of a selected tab/filter item,
 it toggles `elgg-state-active` on the parent `<ul>`, which collapses/expands
 the menu on narrow viewports.
 
@@ -35,3 +35,11 @@ None — leaf plugin.
 - Docker test stack updated to PHP 8.2 / MySQL 8.0 / Elgg 5.1.x.
 - No plugin PHP logic changes required; CSS/JS views are unchanged.
 - `view_extensions` nested-array format retained (works correctly in Elgg 5.x).
+
+## Migration Notes (5.x → 6.x)
+
+- `elgg/elgg ~6.1.0`, `php >=8.1`, `ext-intl` added in `composer.json`.
+- `tabs.js` converted from AMD (`require(['jquery'],...`) to ESM (`import $ from 'jquery'`).
+- Docker test stack added for Elgg 6.x (docker/elgg6/) with PHPUnit 10.5.
+- `view_extensions` nested-array format unchanged (correct for 6.x).
+- No data migration needed.
