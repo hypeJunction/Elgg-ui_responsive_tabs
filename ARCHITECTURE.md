@@ -1,4 +1,4 @@
-# ui_responsive_tabs — Architecture (Elgg 6.x)
+# ui_responsive_tabs — Architecture (Elgg 7.x)
 
 ## Summary
 
@@ -42,4 +42,13 @@ None — leaf plugin.
 - `tabs.js` converted from AMD (`require(['jquery'],...`) to ESM (`import $ from 'jquery'`).
 - Docker test stack added for Elgg 6.x (docker/elgg6/) with PHPUnit 10.5.
 - `view_extensions` nested-array format unchanged (correct for 6.x).
+- No data migration needed.
+
+## Migration Notes (6.x → 7.x)
+
+- `elgg/elgg ~7.0.0`, `php >=8.3` updated in `composer.json`.
+- Docker test stack added for Elgg 7.x (docker/elgg7/) with PHP 8.3.
+- CSS uses native CSS already — no CSS Crush variables to replace.
+- No ElggObject direct instantiation (no abstract class changes needed).
+- No notification handler classes referenced (no renames needed).
 - No data migration needed.
