@@ -52,3 +52,7 @@ None — leaf plugin.
 - No ElggObject direct instantiation (no abstract class changes needed).
 - No notification handler classes referenced (no renames needed).
 - No data migration needed.
+
+## Seeding
+
+No seeder required. This plugin owns no entity types, subtypes, or persistent relationship schemas — it is a pure UI/utility/admin plugin with no persisted entity surface of its own.
