@@ -1,6 +1,6 @@
 Responsive Tabs for Elgg
 ========================
-![Elgg 5.x](https://img.shields.io/badge/Elgg-5.x-orange.svg?style=flat-square)
+![Elgg 7.x](https://img.shields.io/badge/Elgg-7.x-orange.svg?style=flat-square)
 
 ## Features
 
@@ -10,3 +10,9 @@ Responsive Tabs for Elgg
 ![Desktop](https://raw.github.com/hypeJunction/Elgg-ui_responsive_tabs/master/screenshots/desktop.png "Desktop")
 ![Mobile](https://raw.github.com/hypeJunction/Elgg-ui_responsive_tabs/master/screenshots/mobile.png "Mobile")
 ![Mobile Toggled](https://raw.github.com/hypeJunction/Elgg-ui_responsive_tabs/master/screenshots/mobile-toggled.png "Mobile Toggled")
+
+## Compatibility
+
+| Plugin version | Elgg version |
+|---|---|
+| current | 7.x |
