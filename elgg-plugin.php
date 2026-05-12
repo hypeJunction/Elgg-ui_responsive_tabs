@@ -5,7 +5,7 @@ return [
 		'id' => 'ui_responsive_tabs',
 		'name' => 'Responsive Tabs',
 		'version' => '7.0.0',
-		'description' => 'Responsive tab navigation for Elgg.',
+		'description' => 'Responsive tabs for Elgg',
 		'author' => 'Ismayil Khayredinov',
 		'category' => 'ui',
 	],
