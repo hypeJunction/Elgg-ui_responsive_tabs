@@ -1,36 +1,36 @@
 {
-	"name": "hypejunction/ui_responsive_tabs",
-	"version": "1.0.0",
-	"type": "elgg-plugin",
-	"description": "Responsive tabs for Elgg",
-	"homepage": "https://github.com/hypeJunction/Elgg-ui_responsive_tabs",
-	"keywords": [
-		"elgg",
-		"plugin",
-		"ui",
-		"tabs"
-	],
-	"license": "GPL-2.0",
-	"authors": [
-		{
-			"name": "Ismayil Khayredinov",
-			"email": "ismayil.khayredinov@gmail.com"
-		}
-	],
-	"require": {
-		"composer/installers": "^2.0",
-		"php": ">=8.1",
-		"elgg/elgg": "~6.1.0",
-		"ext-intl": "*"
-	},
-	"config": {
-		"allow-plugins": {
-			"composer/installers": true
-		}
-	},
-	"extra": {
-		"elgg-plugin": {
-			"id": "ui_responsive_tabs"
-		}
-	}
+    "name": "hypejunction/ui_responsive_tabs",
+    "version": "6.0.0",
+    "type": "elgg-plugin",
+    "description": "Responsive tabs for Elgg",
+    "homepage": "https://github.com/hypeJunction/Elgg-ui_responsive_tabs",
+    "keywords": [
+        "elgg",
+        "plugin",
+        "ui",
+        "tabs"
+    ],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Ismayil Khayredinov",
+            "email": "ismayil.khayredinov@gmail.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "^2.0",
+        "php": ">=8.1",
+        "elgg/elgg": "~6.1.0",
+        "ext-intl": "*"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "extra": {
+        "elgg-plugin": {
+            "id": "ui_responsive_tabs"
+        }
+    }
 }
